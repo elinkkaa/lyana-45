@@ -1,0 +1,98 @@
+/* ============================================================
+   BASE — resets, ambient keyframes, signature gold utilities.
+   Ambient motion is gentle and respects prefers-reduced-motion.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg-base);
+  color: var(--text-body);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: rgba(216,181,103,0.3); color: var(--gold-100); }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--text-heading);
+  line-height: var(--lh-snug);
+  margin: 0 0 var(--space-4);
+}
+
+a { color: var(--gold-300); text-decoration-color: var(--border-gold-soft); }
+a:hover { color: var(--gold-100); }
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* ---- Signature: shimmering gold leaf text ---- */
+.gold-leaf {
+  background: linear-gradient(100deg,
+    #A9842F 0%, #E8CC85 26%, #F9ECC4 40%, #FFF7DF 50%,
+    #F2DEA4 60%, #D8B567 74%, #A9842F 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gold-shimmer var(--dur-amb) var(--ease-soft) infinite;
+}
+
+@keyframes gold-shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes lantern-sway {
+  0%, 100% { transform: rotate(-2.4deg); }
+  50% { transform: rotate(2.4deg); }
+}
+
+@keyframes float-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+
+/* ---- Component interaction states (inline-styled components keep
+        their static look here so hover/focus can use real CSS) ---- */
+.ds-btn:hover { transform: translateY(-1px); filter: brightness(1.06); }
+.ds-btn:active { transform: translateY(0) scale(0.985); filter: brightness(0.97); }
+.ds-btn:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 3px; }
+
+.ds-input:hover { border-color: var(--border-gold) !important; }
+.ds-input:focus {
+  border-color: var(--gold-300) !important;
+  box-shadow: 0 0 0 3px rgba(216,181,103,0.18), var(--inset-engrave) !important;
+  outline: none;
+}
+.ds-input::placeholder { color: var(--ivory-muted); opacity: 0.7; }
+
+.ds-radio:hover { border-color: var(--border-gold) !important; }
+
+/* Hairline Deco rule used between blocks */
+.deco-rule {
+  height: 1px;
+  border: 0;
+  background: linear-gradient(90deg, transparent,
+    var(--border-gold-soft) 18%, var(--gold-400) 50%,
+    var(--border-gold-soft) 82%, transparent);
+}

@@ -1,0 +1,62 @@
+/* ============================================================
+   TYPOGRAPHY — Playfair Display (display), Lora (body),
+   Poiret One (geometric Deco accents / numerals / labels).
+   ============================================================ */
+
+:root {
+  --font-display: 'Playfair Display', 'Times New Roman', serif;
+  --font-body: 'Lora', Georgia, serif;
+  --font-deco: 'Poiret One', 'Playfair Display', serif;
+
+  /* Fluid type scale — glamorous, generous on hero, calm in body */
+  --fs-display: clamp(2.75rem, 8vw, 5.5rem);   /* @kind font */   /* hero name */
+  --fs-h1: clamp(2rem, 5.2vw, 3.25rem);   /* @kind font */
+  --fs-h2: clamp(1.6rem, 3.6vw, 2.25rem);   /* @kind font */
+  --fs-h3: clamp(1.25rem, 2.4vw, 1.6rem);   /* @kind font */
+  --fs-lead: clamp(1.1rem, 1.9vw, 1.4rem);     /* @kind font */   /* atmospheric */
+  --fs-body: 1.0625rem;   /* @kind font */
+  --fs-sm: 0.9375rem;   /* @kind font */
+  --fs-eyebrow: 0.8125rem;   /* @kind font */   /* tracked Deco labels */
+  --fs-caption: 0.75rem;   /* @kind font */
+
+  /* Weights */
+  --fw-body: 400;   /* @kind font */
+  --fw-medium: 500;   /* @kind font */
+  --fw-semibold: 600;   /* @kind font */
+  --fw-bold: 700;   /* @kind font */
+  --fw-black: 900;   /* @kind font */
+
+  /* Line heights */
+  --lh-tight: 1.08;   /* @kind font */
+  --lh-snug: 1.28;   /* @kind font */
+  --lh-body: 1.62;   /* @kind font */
+
+  /* Tracking — Deco loves wide letterspacing on caps */
+  --ls-eyebrow: 0.32em;   /* @kind font */
+  --ls-display: 0.02em;   /* @kind font */
+  --ls-caps: 0.16em;   /* @kind font */
+  --ls-body: 0.005em;   /* @kind font */
+}
+
+/* Convenience helper classes (optional; tokens are the contract) */
+.t-eyebrow {
+  font-family: var(--font-deco);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--gold-300);
+}
+.t-display {
+  font-family: var(--font-display);
+  font-weight: var(--fw-black);
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-display);
+}
+.t-lead {
+  font-family: var(--font-body);
+  font-size: var(--fs-lead);
+  line-height: var(--lh-body);
+  font-style: italic;
+  color: var(--ivory-dim);
+}

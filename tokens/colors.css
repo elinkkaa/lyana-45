@@ -1,0 +1,77 @@
+/* ============================================================
+   COLORS — "Art Deco Arabian Nights"
+   Candlelit palace at night: midnight navy & deep sapphire grounds,
+   emerald + ruby jewels, generous antique gold/brass, warm ivory text.
+   ============================================================ */
+
+:root {
+  /* --- Midnight / Sapphire grounds --- */
+  --navy-950: #060A1A;   /* deepest midnight, page edges */
+  --navy-900: #0A0F26;   /* base background */
+  --navy-850: #0E1430;   /* raised */
+  --navy-800: #121A3D;   /* panel */
+  --sapphire-700: #16265C;
+  --sapphire-600: #1B3170;
+  --sapphire-500: #224089;
+  --sapphire-400: #2E54A8;
+
+  /* --- Jewel accents --- */
+  --emerald-600: #0E6B4F;
+  --emerald-500: #1A9A72;
+  --emerald-400: #2FBE93;
+  --ruby-700: #6E1322;
+  --ruby-600: #9A2233;
+  --ruby-500: #C13247;
+  --amethyst-500: #6E4A9E;  /* occasional deep violet accent */
+
+  /* --- Antique gold / brass --- */
+  --gold-700: #8A6A2C;   /* deep engraved shadow */
+  --gold-600: #A9842F;
+  --gold-500: #C39A4E;   /* core brass */
+  --gold-400: #D8B567;   /* primary gold */
+  --gold-300: #E8CC85;
+  --gold-200: #F2DEA4;
+  --gold-100: #F9ECC4;   /* highlight / lit edge */
+
+  /* --- Warm neutrals (text & parchment) --- */
+  --ivory: #F4EAD2;
+  --ivory-dim: #D8CBA6;
+  --ivory-muted: #A99C78;
+  --parchment: #EFE3C6;
+  --ink-900: #0A0F26;    /* text on gold/ivory surfaces */
+
+  /* --- Signature gold leaf gradients (shimmer source) --- */
+  --grad-gold: linear-gradient(135deg,
+      #8A6A2C 0%, #C39A4E 22%, #F2DEA4 48%,
+      #F9ECC4 52%, #D8B567 64%, #A9842F 86%, #8A6A2C 100%);   /* @kind color */
+  --grad-gold-soft: linear-gradient(180deg, var(--gold-300), var(--gold-500));   /* @kind color */
+  --grad-night: radial-gradient(140% 110% at 50% 0%,
+      #16265C 0%, #0E1430 46%, #0A0F26 78%, #060A1A 100%);   /* @kind color */
+  --grad-keyhole: linear-gradient(180deg, #16265C 0%, #101740 60%, #0A0F26 100%);   /* @kind color */
+
+  /* ============ Semantic aliases ============ */
+  --bg-base: var(--navy-900);
+  --bg-deep: var(--navy-950);
+  --surface-panel: var(--navy-800);
+  --surface-raised: var(--sapphire-700);
+  --surface-card: rgba(22, 38, 92, 0.55);
+
+  --text-heading: var(--gold-100);
+  --text-body: var(--ivory);
+  --text-muted: var(--ivory-muted);
+  --text-on-gold: var(--ink-900);
+
+  --accent-gold: var(--gold-400);
+  --accent-emerald: var(--emerald-500);
+  --accent-ruby: var(--ruby-600);
+
+  --border-gold: var(--gold-500);
+  --border-gold-soft: rgba(216, 181, 103, 0.34);
+  --border-hairline: rgba(216, 181, 103, 0.18);
+
+  --focus-ring: rgba(242, 222, 164, 0.65);
+
+  /* status (kept inside the warm/jewel palette) */
+  --ok: var(--emerald-400);
+  --danger: var(--ruby-500);
+}

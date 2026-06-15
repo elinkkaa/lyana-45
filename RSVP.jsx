@@ -14,9 +14,11 @@ function saveRSVP(entry) {
   // Optional remote capture: set window.RSVP_ENDPOINT to a Formspree/Sheet URL.
   if (window.RSVP_ENDPOINT) {
     try {
+      // Use no-cors + text/plain to avoid CORS preflight (Google Apps Script limitation)
       fetch(window.RSVP_ENDPOINT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain' },
         body: JSON.stringify(entry),
       }).catch(() => {});
     } catch (e) { /* offline-safe */ }
